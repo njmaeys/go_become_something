@@ -1,0 +1,3 @@
+# I want to deploy this to pi at some point on kubernetes.
+# Real long term attemp would be to try and maybe set up ELK on it and send
+# shit along to that and visualize for the hell of it
