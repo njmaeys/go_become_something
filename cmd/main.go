@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/njmaeys/go_become_something/v1/internal"
 )
 
 // DummyStringVal just testing some stuff out
@@ -21,15 +22,15 @@ func dummyString(valToReturn string) DummyStringVal {
 	return myVal
 }
 
-// inbound takes in a simple request
-func inbound(rw http.ResponseWriter, req *http.Request) {
-	body, err := ioutil.ReadAll(req.Body)
-	if err != nil {
-		panic(err)
-	}
-
-	log.Println(string(body))
-}
+//// inbound takes in a simple request
+//func inbound(rw http.ResponseWriter, req *http.Request) {
+//	body, err := ioutil.ReadAll(req.Body)
+//	if err != nil {
+//		panic(err)
+//	}
+//
+//	log.Println(string(body))
+//}
 
 func main() {
 	fmt.Println("Go become something!")
@@ -38,6 +39,6 @@ func main() {
 	fmt.Println(dummy)
 
 	///////////////////// Actually start here /////////////////
-	http.HandleFunc("/inbound", inbound)
+	http.HandleFunc("/inbound", internal.Inbound)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
