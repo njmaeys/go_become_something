@@ -1,0 +1,16 @@
+[
+  {
+    "meatadata": {
+      "name": "Nate",
+      "age": 29
+    },
+    "drink": "Beer"
+  },
+  {
+    "meatadata": {
+      "name": "Kaitlin",
+      "age": 28
+    },
+    "drink": "Whiskey Coke"
+  }
+]
